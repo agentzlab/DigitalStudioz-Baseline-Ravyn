@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>DigitalStudioz — Imagination is everything.</title>
 <meta name="description" content="DigitalStudioz — websites, brand systems, AI workflows, and care. Imagination is everything." />
+<link rel="preload" as="image" href="assets/img/dsz-hero.webp" fetchpriority="high" />
+<meta name="color-scheme" content="dark only" />
+<meta name="theme-color" content="#0a0a0a" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500&display=swap" rel="stylesheet" />
@@ -21,12 +24,12 @@ ul,ol{list-style:none;padding:0}
 address{font-style:normal}
 :focus-visible{outline:2px solid var(--brand-light);outline-offset:2px}
 :root{
-  --background:#ffffff;--foreground:#0a0a0a;--brand:#e1182e;--brand-deep:#0a0a0a;
-  --brand-light:#ff4d5e;--accent-gold:#c9a227;--surface:#f4f4f4;--surface-card:#ffffff;
-  --ink:#0a0a0a;--ink-soft:#717784;--ghost:#d7dae1;--hairline:#e6e8ec;--on-brand:#ffffff;
-  --radius-card:1.5rem;--radius-card-lg:2rem;--radius-pill:62.5rem;--page-bg:#0a0a0a;
+  --background:#0a0a0a;--foreground:#f5f5f5;--brand:#e1182e;--brand-deep:#050505;
+  --brand-light:#ff4d5e;--accent-gold:#c9a227;--surface:#141414;--surface-card:#161616;
+  --ink:#f5f5f5;--ink-soft:#a8adb8;--ghost:#6e727c;--hairline:#2a2a2a;--on-brand:#ffffff;
+  --radius-card:1.5rem;--radius-card-lg:2rem;--radius-pill:62.5rem;--page-bg:#050505;
 }
-html{font-size:16px}
+html{font-size:16px;color-scheme:dark}
 @media (max-width:1920px){html{font-size:0.833333vw}}
 @media (max-width:1440px){html{font-size:1.111111vw}}
 @media (max-width:1024px){html{font-size:1.5625vw}}
@@ -37,8 +40,8 @@ body{min-height:100vh;background:var(--page-bg);color:var(--foreground);font-fam
 main{width:100%;overflow-x:clip;padding:0.5rem}
 @media (min-width:640px){main{padding:0.75rem}}
 .eyebrow{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.75rem;font-weight:500;text-transform:uppercase;letter-spacing:0.22em}
-.eyebrow .dot{width:0.375rem;height:0.375rem;border-radius:var(--radius-pill);background:var(--brand);flex-shrink:0}
-.eyebrow.light{color:rgba(255,255,255,0.7)}.eyebrow.light .dot{background:var(--brand-light)}.eyebrow.dark{color:var(--ink-soft)}
+.eyebrow .dot{width:0.375rem;height:0.375rem;border-radius:var(--radius-pill);background:var(--accent-gold);flex-shrink:0}
+.eyebrow.light{color:rgba(255,255,255,0.7)}.eyebrow.light .dot{background:var(--accent-gold)}.eyebrow.dark{color:var(--ink-soft)}
 .pill{display:inline-flex;align-items:center;gap:0.5rem;border-radius:var(--radius-pill);padding:0.875rem 1.75rem;font-size:0.875rem;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;transition:background .25s,color .25s}
 .pill svg{width:1rem;height:1rem;flex-shrink:0}
 .pill.light{background:#fff;color:var(--brand-deep)}.pill.light:hover{background:var(--brand-light);color:#fff}
@@ -69,7 +72,7 @@ main{width:100%;overflow-x:clip;padding:0.5rem}
 .hero-parallax{position:absolute;inset:0;z-index:-10;overflow:hidden}
 .hero-parallax-inner{position:absolute;left:0;right:0;top:-16%;height:132%;width:100%;will-change:transform}
 .hero-parallax-inner img{width:100%;height:100%;object-fit:cover}
-.hero-grad{position:absolute;inset:0;z-index:-9;background:linear-gradient(to bottom,rgba(10,10,10,0.55),rgba(10,10,10,0.25),rgba(10,10,10,0.7))}
+.hero-grad{position:absolute;inset:0;z-index:-9;background:linear-gradient(to bottom,rgba(5,5,5,0.58),rgba(5,5,5,0.28),rgba(5,5,5,0.75))}
 .site-header{display:flex;align-items:center;padding:1.5rem 1.5rem 0;font-size:0.75rem;color:#fff;position:relative;z-index:5}
 @media (min-width:640px){.site-header{padding:2rem 2.5rem 0}}
 .site-header .nav-left,.site-header .nav-right,.site-header .nav-brand{flex:1}
@@ -117,6 +120,9 @@ main{width:100%;overflow-x:clip;padding:0.5rem}
 
 .trust{position:relative;isolate;overflow:hidden;background:var(--background);padding:4rem 1.5rem;border-radius:var(--radius-card-lg);margin-top:0.75rem}
 @media (min-width:640px){.trust{padding:5rem 2.5rem}}
+.trust-plate{position:absolute;inset:0;z-index:0;pointer-events:none}
+.trust-plate img{width:100%;height:100%;object-fit:cover;opacity:0.35}
+.trust-plate::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,5,5,0.55),rgba(5,5,5,0.78),rgba(5,5,5,0.92))}
 .trust-badges{position:relative;z-index:20;display:flex;flex-direction:column;gap:1.25rem}
 @media (min-width:640px){.trust-badges{flex-direction:row;justify-content:space-between;align-items:flex-start}}
 .pct-badge{width:7rem;height:7rem;border-radius:var(--radius-pill);background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0.75rem}
@@ -126,7 +132,7 @@ main{width:100%;overflow-x:clip;padding:0.5rem}
 @media (min-width:640px){.badge-card{gap:1.25rem;padding:1.5rem}}
 .badge-card .chip{border-radius:0.75rem;background:var(--background);padding:0.5rem 1rem;font-size:1.25rem;font-weight:500;flex-shrink:0}
 .badge-card h3{font-size:1.125rem;font-weight:500;margin-bottom:0.35rem}.badge-card p{font-size:0.75rem;color:var(--ink-soft);line-height:1.55}
-#trust-title{pointer-events:none;z-index:0;user-select:none;max-width:88rem;margin:3rem auto 0;font-size:8.2vw;font-weight:500;text-transform:uppercase;line-height:1.02;letter-spacing:-0.02em;position:relative}
+#trust-title{pointer-events:none;z-index:5;user-select:none;max-width:88rem;margin:3rem auto 0;font-size:8.2vw;font-weight:500;text-transform:uppercase;line-height:1.02;letter-spacing:-0.02em;position:relative}
 #trust-title .row{display:flex;justify-content:space-between;gap:1rem}#trust-title .ghost{color:var(--ghost)}#trust-title .ink{color:var(--ink)}
 .coach-wrap{position:relative;z-index:10;display:flex;justify-content:center;margin-top:2rem}
 @media (min-width:640px){.coach-wrap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin-top:0;width:16rem}}
@@ -177,15 +183,26 @@ main{width:100%;overflow-x:clip;padding:0.5rem}
 .stat-cell .val{font-size:3.75rem;font-weight:500;letter-spacing:-0.02em;line-height:1}
 @media (min-width:640px){.stat-cell .val{font-size:4.5rem}}
 .stat-cell .label{font-size:0.875rem;color:rgba(255,255,255,0.65);margin-top:0.75rem}
-.testimonials{background:var(--background);padding:5rem 1.5rem;border-radius:var(--radius-card-lg);margin-top:0.75rem}
+.testimonials{position:relative;isolate;overflow:hidden;background:var(--background);padding:5rem 1.5rem;border-radius:var(--radius-card-lg);margin-top:0.75rem}
 @media (min-width:640px){.testimonials{padding:6rem 2.5rem}}
+.testimonials-plate{position:absolute;inset:0;z-index:0;pointer-events:none}
+.testimonials-plate img{width:100%;height:100%;object-fit:cover;opacity:0.28}
+.testimonials-plate::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,5,5,0.7),rgba(5,5,5,0.85),rgba(5,5,5,0.95))}
+.testimonials > *:not(.testimonials-plate){position:relative;z-index:1}
+
+.texture-band{position:relative;isolate;overflow:hidden;border-radius:var(--radius-card-lg);margin-top:0.75rem;min-height:7.5rem;display:flex;align-items:center;justify-content:center;background:#050505}
+.texture-band .tex{position:absolute;inset:0;z-index:0}
+.texture-band .tex img{width:100%;height:100%;object-fit:cover;opacity:0.22;filter:brightness(0.45) contrast(1.1)}
+.texture-band .tex::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,5,0.92),rgba(5,5,5,0.75),rgba(5,5,5,0.92)),linear-gradient(to bottom,rgba(5,5,5,0.55),rgba(5,5,5,0.85))}
+.texture-band .tex-label{position:relative;z-index:1;font-size:0.7rem;font-weight:500;text-transform:uppercase;letter-spacing:0.28em;color:var(--accent-gold);opacity:0.85}
+
 .testimonials h2{font-size:3rem;font-weight:500;line-height:0.95;margin-top:1rem}.testimonials h2 .clip{display:block}
 .t-grid{display:grid;gap:1.25rem;margin-top:3.5rem}
 @media (min-width:768px){.t-grid{grid-template-columns:repeat(3,1fr)}}
-.t-card{display:flex;flex-direction:column;justify-content:space-between;height:100%;border-radius:var(--radius-card);background:var(--surface);padding:1.75rem;will-change:transform}
-.t-card .q{font-size:2.25rem;color:var(--brand);line-height:1}
+.t-card{display:flex;flex-direction:column;justify-content:space-between;height:100%;border-radius:var(--radius-card);background:rgba(20,20,20,0.92);border:1px solid var(--hairline);padding:1.75rem;will-change:transform}
+.t-card .q{font-size:2.25rem;color:var(--accent-gold);line-height:1}
 .t-card blockquote{font-size:1.125rem;line-height:1.55;color:var(--ink);margin-top:1rem}
-.t-card .sample{display:inline-block;font-size:0.65rem;font-weight:500;text-transform:uppercase;letter-spacing:0.14em;color:var(--brand);margin-top:0.75rem}
+.t-card .sample{display:inline-block;font-size:0.65rem;font-weight:500;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent-gold);margin-top:0.75rem}
 .t-card figcaption{border-top:1px solid var(--hairline);padding-top:1rem;margin-top:1.5rem}
 .t-card figcaption .name{font-weight:500}.t-card figcaption .role{font-size:0.875rem;color:var(--ink-soft)}
 .site-footer{background:var(--brand-deep);color:#fff;border-radius:var(--radius-card-lg);margin-top:0.75rem;padding:3.5rem 1.5rem}
@@ -253,7 +270,7 @@ main{width:100%;overflow-x:clip;padding:0.5rem}
 <main>
 <section class="hero" id="hero">
   <div class="hero-parallax" aria-hidden="true"><div class="hero-parallax-inner" id="hero-parallax-inner">
-    <img src="assets/hero/hero-studio.webp" alt="Cinematic DigitalStudioz studio desk with signal glow" fetchpriority="high" />
+    <img src="assets/img/dsz-hero.webp" alt="DigitalStudioz hero plate" fetchpriority="high" decoding="async" />
   </div></div>
   <div class="hero-grad" aria-hidden="true"></div>
   <header class="site-header">
@@ -298,6 +315,7 @@ main{width:100%;overflow-x:clip;padding:0.5rem}
 </section>
 
 <section class="trust" id="trust">
+  <div class="trust-plate" aria-hidden="true"><img src="assets/img/dsz-ravyn-trust.webp" alt="" loading="lazy" decoding="async" /></div>
   <div class="trust-badges">
     <div class="pct-badge" id="pct-badge" style="opacity:0;transform:scale(0.9)">
       <div class="num">100%</div><div class="cap">Studio craft built around your signal</div>
@@ -344,7 +362,7 @@ main{width:100%;overflow-x:clip;padding:0.5rem}
     </div>
     <div class="court-cards">
       <figure class="court-card" data-court style="opacity:0;transform:translateY(48px)">
-        <img src="assets/work-linklabz.webp" alt="LinkLabz decision graph on charcoal with gold nodes" loading="lazy" />
+        <img src="assets/img/dsz-linklabz.webp" alt="LinkLabz decision graph on charcoal with gold nodes" loading="lazy" />
         <figcaption class="court-cap clay">
           <div class="name">LinkLabz</div>
           <div class="desc">Decide what to build—and what to borrow. Raindrop keepers → Cursor.</div>
@@ -352,7 +370,7 @@ main{width:100%;overflow-x:clip;padding:0.5rem}
         </figcaption>
       </figure>
       <figure class="court-card" data-court style="opacity:0;transform:translateY(48px)">
-        <img src="assets/work-workshoplabz.webp" alt="WorkshopLabz tooling shelf with EQ bars" loading="lazy" />
+        <img src="assets/img/dsz-workshoplabz.webp" alt="WorkshopLabz tooling shelf with EQ bars" loading="lazy" />
         <figcaption class="court-cap blue">
           <div class="name">WorkshopLabz</div>
           <div class="desc">Workshop systems map / Comfy labs tooling shelf.</div>
@@ -375,6 +393,7 @@ main{width:100%;overflow-x:clip;padding:0.5rem}
 </section>
 
 <section class="testimonials" id="testimonials">
+  <div class="testimonials-plate" aria-hidden="true"><img src="assets/img/dsz-ravyn-testimonials.webp" alt="" loading="lazy" decoding="async" /></div>
   <div class="eyebrow dark"><span class="dot"></span> What partners say</div>
   <h2 id="testimonials-title"></h2>
   <ul class="t-grid">
@@ -384,6 +403,11 @@ main{width:100%;overflow-x:clip;padding:0.5rem}
   </ul>
 </section>
 
+
+<div class="texture-band" aria-hidden="true">
+  <div class="tex"><img src="assets/img/dsz-texture.webp" alt="" loading="lazy" decoding="async" /></div>
+  <span class="tex-label">Imagination is everything</span>
+</div>
 <footer class="site-footer" id="contact">
   <div class="footer-cta">
     <div><div class="eyebrow light"><span class="dot"></span> Get started</div><p class="ready" id="footer-ready"></p></div>
